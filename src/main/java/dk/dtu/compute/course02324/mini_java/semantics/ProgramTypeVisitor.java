@@ -24,6 +24,7 @@ public class ProgramTypeVisitor extends ProgramVisitor {
             entry(MOD,List.of(INT,FLOAT)), // binary %
             entry(MULT, List.of(INT, FLOAT)));
 
+
     final public Map<Expression, Type> typeMapping = new HashMap<>();
 
     final public Set<Var> variables = new HashSet<>();
@@ -126,6 +127,14 @@ public class ProgramTypeVisitor extends ProgramVisitor {
 
     public void visit(PrintStatement printStatement){
         //Validates the string and expression.
+
+        if(printStatement.string==null){
+            problems.add("Print statement must contain a string");
+        }
+        if(printStatement instanceof PrintStatement){
+            //typeMapping.put(printStatement.expression, printStatement.string);
+        }
+
     }
 
 }

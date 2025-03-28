@@ -4,8 +4,8 @@ import dk.dtu.compute.course02324.mini_java.semantics.ProgramVisitor;
 
 public class PrintStatement implements SimpleStatement{
 
-    String string;
-    Expression expression;
+    public String string;
+    public Expression expression;
 
     public PrintStatement(String string, Expression expression){
         this.string=string;
