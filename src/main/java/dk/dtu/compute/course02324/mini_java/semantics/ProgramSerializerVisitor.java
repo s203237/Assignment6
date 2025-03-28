@@ -59,6 +59,10 @@ public class ProgramSerializerVisitor extends ProgramVisitor  {
         expessionRepresentations.put(var, result);
     }
 
+    public void visit(PrintStatement printStatement){
+        //Printer det visuelle
+    }
+
     @Override
     public void visit(OperatorExpression operatorExpression) {
         if (operatorExpression.operands.size() == 0) {

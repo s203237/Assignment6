@@ -120,4 +120,8 @@ public class ProgramTypeVisitor extends ProgramVisitor {
         }
     }
 
+    public void visit(PrintStatement printStatement){
+
+    }
+
 }

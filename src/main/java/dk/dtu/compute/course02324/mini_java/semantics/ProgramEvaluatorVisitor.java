@@ -59,6 +59,7 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
         // nothing to do for Sequence in evaluator
     }
 
+
     @Override
     public void visit(Declaration declaration) {
         if (declaration.expression != null) {
@@ -114,6 +115,11 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
 
         Number result = function.apply(args);
         values.put(operatorExpression, result);
+    }
+
+    @Override
+    public void visit(PrintStatement printStatement) {
+        //Print
     }
 
 
