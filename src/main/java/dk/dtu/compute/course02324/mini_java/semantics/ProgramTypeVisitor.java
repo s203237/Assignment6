@@ -126,6 +126,7 @@ public class ProgramTypeVisitor extends ProgramVisitor {
     }
 
     public void visit(PrintStatement printStatement){
+<<<<<<< HEAD
         //Validates the string and expression.
 
         if(printStatement.string==null){
@@ -135,6 +136,15 @@ public class ProgramTypeVisitor extends ProgramVisitor {
             //typeMapping.put(printStatement.expression, printStatement.string);
         }
 
+=======
+        if(printStatement.string==null){
+            problems.add("String cannot be null");
+        }
+      Type exprType = typeMapping.get(printStatement.expression);
+      if (exprType==null){
+          problems.add("Print statement has expression with unknown type.");
+      }
+>>>>>>> d3630d0 ( update)
     }
 
 }

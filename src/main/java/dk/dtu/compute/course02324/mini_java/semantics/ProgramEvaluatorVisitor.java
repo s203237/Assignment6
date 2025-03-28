@@ -47,8 +47,22 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
                     entry(FLOAT, minus2float ) )
             ),
             entry(MULT, Map.ofEntries(
+<<<<<<< HEAD
                     entry(FLOAT, multfloat ) )
             ));
+=======
+                    entry(FLOAT, multfloat ),
+                    entry(INT,multint))
+            ),
+            entry(DIV, Map.ofEntries(
+                    entry(FLOAT, divfloat ),
+                    entry(INT,divint))
+            ),
+            entry(MOD, Map.of(
+                    INT, modint
+            ))
+    );
+>>>>>>> d3630d0 ( update)
 
     public ProgramEvaluatorVisitor(ProgramTypeVisitor pv) {
         this.pv = pv;
@@ -119,7 +133,9 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
 
     @Override
     public void visit(PrintStatement printStatement) {
-        //Print .. println
+        Number value = values.get(printStatement.expression);
+
+        System.out.println(printStatement.string + value);
     }
 
 
