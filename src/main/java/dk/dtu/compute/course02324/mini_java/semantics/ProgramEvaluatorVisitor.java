@@ -119,7 +119,7 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
 
     @Override
     public void visit(PrintStatement printStatement) {
-        //Print
+        //Print .. println
     }
 
 

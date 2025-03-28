@@ -60,7 +60,7 @@ public class ProgramSerializerVisitor extends ProgramVisitor  {
     }
 
     public void visit(PrintStatement printStatement){
-        //Printer det visuelle
+        //Gemmer et result af vores string og expression
     }
 
     @Override

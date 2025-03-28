@@ -121,7 +121,7 @@ public class ProgramTypeVisitor extends ProgramVisitor {
     }
 
     public void visit(PrintStatement printStatement){
-
+        //Validates the string and expression.
     }
 
 }
