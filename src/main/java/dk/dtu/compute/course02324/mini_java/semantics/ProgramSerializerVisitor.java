@@ -60,16 +60,13 @@ public class ProgramSerializerVisitor extends ProgramVisitor  {
     }
 
     public void visit(PrintStatement printStatement){
-<<<<<<< HEAD
-        result = printStatement.string + ": " + printStatement.expression;
-        expessionRepresentations.put(printStatement.expression, printStatement.string);
-=======
+
         //Gemmer et result af vores string og expression
        printStatement.expression.accept(this);
        result = "println(\"" + printStatement.string+ "\","
                + expressionRepresentations.get(printStatement.expression)+");";
                statementRepresentations.put(printStatement,result);
->>>>>>> d3630d0 ( update)
+
     }
 
     @Override

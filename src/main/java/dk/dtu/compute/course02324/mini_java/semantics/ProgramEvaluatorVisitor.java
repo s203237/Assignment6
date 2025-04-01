@@ -37,6 +37,22 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
             args -> { float arg1 = args.get(0).floatValue();
                 float arg2 = args.get(1).floatValue();
                 return arg1 * arg2; };
+    private Function<List<Number>,Number> multint =
+            args -> { float arg1 = args.get(0).intValue();
+                float arg2 = args.get(1).intValue();
+                return arg1 * arg2; };
+    private Function<List<Number>,Number> divint =
+            args -> { float arg1 = args.get(0).intValue();
+                float arg2 = args.get(1).intValue();
+                return arg1 / arg2; };
+    private Function<List<Number>,Number> divfloat =
+            args -> { float arg1 = args.get(0).floatValue();
+                float arg2 = args.get(1).floatValue();
+                return arg1 / arg2; };
+    private Function<List<Number>,Number> modint =
+            args -> { float arg1 = args.get(0).intValue();
+                float arg2 = args.get(1).intValue();
+                return arg1 % arg2; };
 
     final private Map<Operator, Map<Type, Function<List<Number>,Number>>> operatorFunctions = Map.ofEntries(
             entry(PLUS2, Map.ofEntries(
@@ -47,10 +63,7 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
                     entry(FLOAT, minus2float ) )
             ),
             entry(MULT, Map.ofEntries(
-<<<<<<< HEAD
-                    entry(FLOAT, multfloat ) )
-            ));
-=======
+
                     entry(FLOAT, multfloat ),
                     entry(INT,multint))
             ),
@@ -62,7 +75,7 @@ public class ProgramEvaluatorVisitor extends ProgramVisitor {
                     INT, modint
             ))
     );
->>>>>>> d3630d0 ( update)
+
 
     public ProgramEvaluatorVisitor(ProgramTypeVisitor pv) {
         this.pv = pv;
